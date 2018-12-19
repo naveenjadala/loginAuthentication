@@ -1,3 +1,4 @@
+const config = require('config');
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
@@ -6,6 +7,10 @@ const userRouter = require('./routes/user.router');
 const loginRouter = require("./routes/login.router");
 
 
+// if(!config.get('jwtPrivateKey')) {
+//     console.error('FATAL ERROR: jwtPrivateKey not defined.');
+//     process.exit(1);
+// }
 
 const app = express();
 
